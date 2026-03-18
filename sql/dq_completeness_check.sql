@@ -54,8 +54,3 @@ JOIN Customer_Dim c ON t.customer_sk = c.customer_sk
 GROUP BY c.customer_sk, c.residency_cd
 ORDER BY fraud_alerts DESC
 LIMIT 50;
-```
-
-**4.** Em "Commit changes" escreve:
-```
-Add SQL queries for DQ checks and KPI reporting
