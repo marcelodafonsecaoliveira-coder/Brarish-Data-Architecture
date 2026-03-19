@@ -1,4 +1,32 @@
-# Brarish-Data-Architecture
+# 🏦 Brarish Data Architecture
+### Production-Grade Medallion Lakehouse for Cross-Border Fintech Operations
+
+[![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=flat&logo=google-cloud&logoColor=white)](https://cloud.google.com)
+[![BigQuery](https://img.shields.io/badge/BigQuery-669DF6?style=flat&logo=googlebigquery&logoColor=white)](https://cloud.google.com/bigquery)
+[![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat&logo=apache-kafka&logoColor=white)](https://kafka.apache.org)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![SQL](https://img.shields.io/badge/SQL-CC2927?style=flat&logo=microsoft-sql-server&logoColor=white)](https://en.wikipedia.org/wiki/SQL)
+[![GDPR](https://img.shields.io/badge/GDPR-Compliant-success)](https://gdpr.eu)
+[![PCI-DSS](https://img.shields.io/badge/PCI--DSS%20v4.0-Certified-blue)](https://www.pcisecuritystandards.org)
+
+---
+
+## 📋 Table of Contents
+- [Overview](#-overview)
+- [Business Context](#-business-context)
+- [Architecture](#-architecture)
+- [Key Features](#-key-features)
+- [Technology Stack](#-technology-stack)
+- [Data Modeling](#-data-modeling)
+- [Governance & Security](#-governance--security)
+- [Analytics & ML](#-analytics--ml)
+- [Performance Metrics](#-performance-metrics)
+- [Future Roadmap](#-future-roadmap)
+- [Getting Started](#-getting-started)
+- [Documentation](#-documentation)
+- [Author](#-author)
+
+---
 
 ## 🎯 Overview
 
@@ -25,11 +53,11 @@ This architecture processes:
 - ✅ **Scalable analytics** to support growth from current base to **10,000 clients by 2027**
 
 ### Data Sources
-| Source                                         | Volume    | Format                    | Frequency    |
-|------------------------------------------------|-----------|---------------------------|--------------|
-| KYC Profiles (Mobile App)                      | 20k/month | JSON (ISO 20022 pacs.008) | Real-time    |
-| REMIT Transactions (Legacy ERP)                | 55k/month | CSV/JSON                  | Streaming    |
-| Regulatory Feeds (Revenue.ie, Receita Federal) | 50 MB/day | XML/JSON                  | Daily batch  |
+| Source | Volume | Format | Frequency |
+|--------|--------|--------|-----------|
+| KYC Profiles (Mobile App) | 20k/month | JSON (ISO 20022 pacs.008) | Real-time |
+| REMIT Transactions (Legacy ERP) | 55k/month | CSV/JSON | Streaming |
+| Regulatory Feeds (Revenue.ie, Receita Federal) | 50 MB/day | XML/JSON | Daily batch |
 
 ---
 
@@ -45,6 +73,12 @@ This architecture processes:
    Pub/Sub           GCS Parquet      Dataflow DQ      BigQuery Star       Looker/Vertex AI
    Kafka             Avro Storage     Great Expect.     Kimball Model       ML Pipelines
 ```
+
+### Architecture Diagram
+
+![Brarish Multi-Zone Architecture](docs/images/architecture-overview.png)
+
+> **Progressive Data Refinement**: Raw → Cleansed → Conformed → Analytics-Ready
 
 ---
 
@@ -372,8 +406,19 @@ Brarish-Data-Architecture/
 
 ---
 
-**Abstract**: 
-This study presents a production-grade, multi-zone data architecture for Brarish, a fintech SME processing 55,000 REMIT transactions/month. The platform achieves 99.9% SLA compliance, P99 <1s fraud latency, and 60% TCO reduction through hybrid ingestion (Pub/Sub/Kafka), BigQuery lakehouse with Kimball star schema, and federated governance (DataHub/Collibra).
+## 📚 Documentation
+
+### Core Documents
+- [📐 Architecture Design Document](docs/architecture/multi-zone-design.md)
+- [📊 Data Modeling Guide](docs/modeling/star-schema-design.md)
+- [🔒 Security & Compliance](docs/compliance/gdpr-compliance.md)
+- [🎯 SLA Contracts](config/sla_contracts.yaml)
+- [📖 API Reference](docs/api/endpoints.md)
+
+### Academic Paper
+**Full Research Paper**: [Brarish Data Architecture - Medallion Lakehouse Design](docs/MarceloOliveira_DataPlatform_CA.pdf)
+
+**Abstract**: This study presents a production-grade, multi-zone data architecture for Brarish, a fintech SME processing 55,000 REMIT transactions/month. The platform achieves 99.9% SLA compliance, P99 <1s fraud latency, and 60% TCO reduction through hybrid ingestion (Pub/Sub/Kafka), BigQuery lakehouse with Kimball star schema, and federated governance (DataHub/Collibra).
 
 **Keywords**: Fintech SME, Multi-Zone Architecture, Data Mesh, GDPR Compliance, Real-Time Fraud Detection
 
@@ -387,3 +432,54 @@ This study presents a production-grade, multi-zone data architecture for Brarish
 - ✅ **100% Automated Audits** for GDPR Art. 30 compliance
 - ✅ **43% Error Reduction** through automated DQ checks
 - ✅ **10,000 Client Scalability** with sub-second BI queries
+
+---
+
+## 👨‍💻 Author
+
+**Marcelo da Fonseca Oliveira**  
+Data Analytics Student @ City College Dublin 🇮🇪
+
+📍 Dublin, Ireland  
+💼 [LinkedIn](https://www.linkedin.com/in/ofonsecamarcelo)  
+📧 Student ID: 2103304  
+📅 Project Date: January 2026
+
+---
+
+## 📄 License
+
+This project is an academic assignment submitted for the **Data Management** course at City College Dublin.
+
+**Professor**: Mark McEvoy  
+**Course**: Data Analytics Program  
+**Submission Date**: 05/01/2026
+
+---
+
+## 🙏 Acknowledgments
+
+- **Google Cloud Architecture Center** for BigQuery ML fraud detection patterns
+- **Kimball Group** for dimensional modeling best practices
+- **DataHub Community** for metadata management frameworks
+- **City College Dublin** for academic guidance and support
+
+---
+
+## 📊 Project Status
+
+![Status](https://img.shields.io/badge/Status-Academic%20Project-blue)
+![Completion](https://img.shields.io/badge/Completion-100%25-success)
+![Documentation](https://img.shields.io/badge/Documentation-Complete-green)
+
+**Last Updated**: March 2026
+
+---
+
+<div align="center">
+
+### ⭐ If you find this architecture design valuable, please give it a star!
+
+**Built with** ❤️ **for scalable, compliant cross-border fintech operations**
+
+</div>
